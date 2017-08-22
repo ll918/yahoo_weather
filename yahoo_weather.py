@@ -17,7 +17,7 @@ https://developer.yahoo.com/weather/#ratelimits
 
 http://www.woeidlookup.com/
 
-python resources
+python resources:
 https://docs.python.org/3/library/urllib.parse
 
 Notes:
@@ -45,6 +45,27 @@ def get_data(url):
         r = response.read()
         json_data = json.loads(r.decode('utf-8'))
     return json_data
+
+
+def print_conditions():
+    # print(condition_date)
+    print(condition_temp, temperature_unit)
+    print(condition_text)
+    print()
+    print(humidity, '%')
+    print(pressure, pressure_unit, rising)  # pressure not in millibar...
+    print(wind_speed, speed_unit)
+
+
+def print_forecast():
+    print('10 days forecast')
+    print()
+    for i in forecast:
+        print(i['day'], i['date'])
+        print(i['text'])
+        print('high:', i['high'])
+        print('low:', i['low'])
+        print()
 
 
 data = get_data(yql_url)
@@ -103,18 +124,7 @@ wind_speed = wind['speed']
 wind_direction = wind['direction']  # degrees
 
 print(description)
-print(condition_date)
-print(condition_temp, temperature_unit)
-print(condition_text)
+print(item_pubDate)
+print_conditions()
 print()
-print(humidity, '%')
-print(pressure, pressure_unit, rising)  # pressure not in millibar...
-print(wind_speed, speed_unit)
-print()
-print('10 days forecast')
-for i in forecast:
-    print(i['day'], i['date'])
-    print(i['text'])
-    print('high:', i['high'])
-    print('low:', i['low'])
-    print()
+print_forecast()
