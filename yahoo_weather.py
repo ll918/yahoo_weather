@@ -49,7 +49,12 @@ def get_data(url):
 
 data = get_data(yql_url)
 weather_data = data['query']['results']['channel']
+# language = weather_data['language']
+# lastBuildDate = weather_data['lastBuildDate']
+# link = weather_data['link']
 pprint(weather_data)
+
+title = weather_data['title']
 
 astronomy = weather_data['astronomy']
 sunrise = astronomy['sunrise']
@@ -65,21 +70,27 @@ description = weather_data['description']
 
 # weather_data['image']
 
-item = weather_data['item']
-condition = item['condition']
-
-######
-
-# language = weather_data['language']
-# lastBuildDate = weather_data['lastBuildDate']
-# link = weather_data['link']
-
 location = weather_data['location']
 city = location['city']
 country = location['country']
 region = location['region']  # province
 
-title = weather_data['title']
+item = weather_data['item']
+description_html = item['description']
+link = item['link']
+lat = item['lat']
+long = item['long']
+item_pubDate = item['pubDate']
+item_title = item['title']
+
+condition = item['condition']
+condition_code = condition['code']
+condition_date = condition['date']
+condition_temp = condition['temp']
+condition_text = condition['text']
+
+# list of dict. keys: date, day, text, high, low, code
+forecast = item['forecast']
 
 units = weather_data['units']
 distance_unit = units['distance']
@@ -88,5 +99,5 @@ speed_unit = units['speed']
 temperature_unit = units['temperature']
 
 wind = weather_data['wind']
-speed = wind['speed']
-direction = wind['direction']  # degrees
+wind_speed = wind['speed']
+wind_direction = wind['direction']  # degrees
