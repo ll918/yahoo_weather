@@ -8,7 +8,7 @@ yql queries examples:
 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="nome, ak")'
 'select item.condition from weather.forecast where woeid = 2487889'
 
-yahoo ressources:
+yahoo resources:
 https://developer.yahoo.com
 https://developer.yahoo.com/weather/
 https://developer.yahoo.com/oauth2/guide/
@@ -17,7 +17,7 @@ https://developer.yahoo.com/weather/#ratelimits
 
 http://www.woeidlookup.com/
 
-python ressources
+python resources
 https://docs.python.org/3/library/urllib.parse
 
 Notes:
