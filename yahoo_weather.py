@@ -52,7 +52,7 @@ weather_data = data['query']['results']['channel']
 # language = weather_data['language']
 # lastBuildDate = weather_data['lastBuildDate']
 # link = weather_data['link']
-pprint(weather_data)
+# pprint(weather_data)
 
 title = weather_data['title']
 
@@ -101,3 +101,20 @@ temperature_unit = units['temperature']
 wind = weather_data['wind']
 wind_speed = wind['speed']
 wind_direction = wind['direction']  # degrees
+
+print(description)
+print(condition_date)
+print(condition_temp, temperature_unit)
+print(condition_text)
+print()
+print(humidity, '%')
+print(pressure, pressure_unit, rising)  # pressure not in millibar...
+print(wind_speed, speed_unit)
+print()
+print('10 days forecast')
+for i in forecast:
+    print(i['day'], i['date'])
+    print(i['text'])
+    print('high:', i['high'])
+    print('low:', i['low'])
+    print()
