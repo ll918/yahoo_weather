@@ -1,6 +1,10 @@
-# title1
+# My personal yahoo weather report with python 3
 
-## title2
+## Project status: halted
+The api returns inaccurate values for pressure, visibility, wind speed and 
+windchill.
 
+Yahoo has been informed and there will be no further development until the 
+situation is corrected.
 
-## disclaimer
+2017-08-23
